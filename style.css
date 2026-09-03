@@ -18,6 +18,7 @@ body {
 nav {
   height: 80px;
   display: flex;
+  background-color: transparent;
 }
 
 img {
@@ -108,6 +109,7 @@ button:active {
 .nav__link--primary {
   border: 2px solid #7342d6;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .nav__link--primary:hover {
@@ -184,7 +186,8 @@ LANDING
 }
 
 header {
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+  height: auto;
 }
 
 .header {
@@ -192,20 +195,26 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
+  position: relative;
+  z-index: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 32px;
-  justify-content: space-around;
+  justify-content: center;
+  padding-bottom: 32px;
 }
 
 .header__description {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .header__img--wrapper {
-  width: min(48%, 520px);
+  order: -1;
+  width: min(60%, 420px);
   padding: 20px;
 
   /* Added this aftr the tutuorial to show it over the wave on the larger screens */
@@ -414,12 +423,8 @@ footer {
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
-
   .header__img--wrapper {
-    width: min(80%, 520px);
+    width: min(80%, 420px);
   }
 
   .header__description {
@@ -446,11 +451,11 @@ footer {
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
   .btn__menu {
-    display: block;
+    display: none;
   }
 
   .nav__links {
-    display: none;
+    display: block;
   }
 
   .highligh {

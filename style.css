@@ -206,6 +206,7 @@ header {
 }
 
 .header__description {
+  order: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,7 +214,7 @@ header {
 }
 
 .header__img--wrapper {
-  order: -1;
+  order: 0;
   width: min(60%, 420px);
   padding: 20px;
 
@@ -251,6 +252,21 @@ header {
 #highlights {
   position: relative;
   max-width: 100vw;
+}
+
+#highlights .container {
+  position: relative;
+  z-index: 2;
+}
+
+#highlights .section__title {
+  color: #242424;
+  font-weight: 400;
+}
+
+#highlights .section__title strong,
+#highlights .section__title .purple {
+  display: inline;
 }
 
 #highlights:after,
@@ -458,11 +474,11 @@ footer {
     display: block;
   }
 
-  .highligh {
+  .highlights {
     width: 100%;
   }
 
-  .highlight:not(:last-child) {
+  .highlights:not(:last-child) {
     margin-bottom: 24px;
   }
 }
